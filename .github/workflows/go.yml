@@ -29,6 +29,7 @@ jobs:
       run: go build -v ./...
     - name: Test
       run: go test -v --cover
+    - name: Generate file
       
     - name: Analyze with SonarCloud
       uses: sonarsource/sonarcloud-github-action@master
@@ -36,12 +37,12 @@ jobs:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
-         -Dsonar.sources=./
-         -Dsonar.tests=./
+         -Dsonar.sources=.
+         -Dsonar.exclusions=**/*_test.go,**/vendor/**,**/testdata/*
+         -Dsonar.tests=.
          -Dsonar.test.inclusions=**/*_test.go
-         -Dsonar.go.test.reportPaths=coverage.out
-         -Dsonar.go.coverage.reportPaths=report.json
-
+         -Dsonar.test.exclusions=**/vendor/**
+         -Dsonar.go.coverage.reportPaths=/github/workspace/bin/cov.out
 
 
 
