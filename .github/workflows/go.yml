@@ -32,8 +32,8 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@master
       with:
         args: >
-         sonar.organization=mukunda2912
-         sonar.projectKey=Mukunda2912_sonar-project
+         -Dsonar.organization=mukunda2912
+         -Dsonar.projectKey=Mukunda2912_sonar-project
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
