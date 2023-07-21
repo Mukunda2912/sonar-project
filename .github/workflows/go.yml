@@ -30,7 +30,7 @@ jobs:
     - name: Run unit Tests
       run: |
           go test -coverprofile=./cov.out ./...
-          go test-json > report.json
+          go test -json > report.json
           
 #     - name: Run Gosec Security Scanner
 #       run: |
