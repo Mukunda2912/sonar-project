@@ -1,0 +1,12 @@
+{"Time":"2023-07-21T15:17:41.699129055+05:30","Action":"run","Package":"service.go","Test":"TestAdd"}
+{"Time":"2023-07-21T15:17:41.699279349+05:30","Action":"output","Package":"service.go","Test":"TestAdd","Output":"=== RUN   TestAdd\n"}
+{"Time":"2023-07-21T15:17:41.699296141+05:30","Action":"output","Package":"service.go","Test":"TestAdd","Output":"--- PASS: TestAdd (0.00s)\n"}
+{"Time":"2023-07-21T15:17:41.699304927+05:30","Action":"pass","Package":"service.go","Test":"TestAdd","Elapsed":0}
+{"Time":"2023-07-21T15:17:41.699314014+05:30","Action":"run","Package":"service.go","Test":"TestSubtract"}
+{"Time":"2023-07-21T15:17:41.699320437+05:30","Action":"output","Package":"service.go","Test":"TestSubtract","Output":"=== RUN   TestSubtract\n"}
+{"Time":"2023-07-21T15:17:41.699336226+05:30","Action":"output","Package":"service.go","Test":"TestSubtract","Output":"--- PASS: TestSubtract (0.00s)\n"}
+{"Time":"2023-07-21T15:17:41.699342368+05:30","Action":"pass","Package":"service.go","Test":"TestSubtract","Elapsed":0}
+{"Time":"2023-07-21T15:17:41.69934866+05:30","Action":"output","Package":"service.go","Output":"PASS\n"}
+{"Time":"2023-07-21T15:17:41.699354832+05:30","Action":"output","Package":"service.go","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2023-07-21T15:17:41.69965546+05:30","Action":"output","Package":"service.go","Output":"ok  \tservice.go\t0.002s\n"}
+{"Time":"2023-07-21T15:17:41.699673193+05:30","Action":"pass","Package":"service.go","Elapsed":0.002}
