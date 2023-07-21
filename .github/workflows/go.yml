@@ -36,7 +36,12 @@ jobs:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
-         -Dsonar.coverage.goReportPaths=coverage.lcov
+         -Dsonar.sources=./
+         -Dsonar.tests=./
+         -Dsonar.test.inclusions=**/*_test.go
+         -Dsonar.go.coverage.reportPaths=coverage.lcov
+
+
 
 
       env:
