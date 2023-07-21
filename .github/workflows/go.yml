@@ -31,10 +31,9 @@ jobs:
     - name: Analyze with SonarCloud
       uses: sonarsource/sonarcloud-github-action@master
       with:
-        projectBaseDir: my-custom-directory
         args: >
-         -Dsonar.organization=mukunda2912
-         -Dsonar.projectKey=Mukunda2912_sonar-project
+         sonar.organization=mukunda2912
+         sonar.projectKey=Mukunda2912_sonar-project
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
