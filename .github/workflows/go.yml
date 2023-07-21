@@ -28,8 +28,15 @@ jobs:
     - name: Build
       run: go build -v ./...
       
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        projectBaseDir: my-custom-directory
+        args: >
+         -Dsonar.organization=mukunda2912
+         -Dsonar.projectKey=Mukunda2912_sonar-project
+
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
