@@ -1,44 +1,47 @@
-on: push
-name: Main Workflow
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+
+
+name: sonar-project
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+    types: [opened, synchronize, reopened]
+
 jobs:
-  build:
-    name: Compile and Test
+  sonarcloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - name: Clone Repository
-        uses: actions/checkout@master
-      - name: Setup go
-        uses: actions/setup-go@v4
-        with:
-          go-version: '1.20'
-      - run: go test -coverprofile cov.out
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v3
-        with:
-          name: code-coverage-report
-          path: bin
+    - uses: actions/checkout@v3
+      with:
+          fetch-depth: 0
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
 
-  sonarCloudTrigger:
-    needs: build
-    name: SonarCloud Trigger
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@master
-      - name: Download code coverage results
-        uses: actions/download-artifact@v3
-        with:
-          name: code-coverage-report
-          path: bin
-      - name: Analyze with SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Build
+      run: go build -v ./...
+    - name: Test
+      run: go test -v --cover
+ 
+      
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        args: >
+         -Dsonar.organization=mukunda2912
+         -Dsonar.projectKey=Mukunda2912_sonar-project
+ 
 
-  integrationTest:
-    needs: build
-    name: Integration Test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo Should run integration tests.
+
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        
