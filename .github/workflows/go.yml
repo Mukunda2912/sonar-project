@@ -27,20 +27,22 @@ jobs:
 
     - name: Build
       run: go build -v ./...
-    - name: Test
-      run: go test -v --cover
+    - name: Run unit Tests
+      run: |
+          go test -coverprofile=./cov.out ./...
+          
+    - name: Run Gosec Security Scanner
+      run: |
+          go get github.com/securego/gosec/cmd/gosec
+          gosec -no-fail -fmt=sonarqube -out report.json ./...
  
       
     - name: Analyze with SonarCloud
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: SonarSource/sonarcloud-github-action@v1.9.1
       with:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
- 
-
-
-
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
