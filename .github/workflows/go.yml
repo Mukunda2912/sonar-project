@@ -29,7 +29,7 @@ jobs:
       run: go build -v ./...
     - name: Run unit Tests
       run: |
-          go test -coverprofile=./cov.out ./...
+          go test -coverprofile=./cov.out ./src
           go test -json > report.json
           
 #     - name: Run Gosec Security Scanner
@@ -44,7 +44,7 @@ jobs:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
-         -Dsonar.go.coverage.reportPaths=cov.out
+         -Dsonar.go.coverage.reportPaths=src/cov.out
          -Dsonar.exclusions=**/*_test.go
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
