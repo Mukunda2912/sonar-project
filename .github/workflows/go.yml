@@ -37,12 +37,7 @@ jobs:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
-         -Dsonar.sources=.
-         -Dsonar.exclusions=**/*_test.go,**/vendor/**,**/testdata/*
-         -Dsonar.tests=.
-         -Dsonar.test.inclusions=**/*_test.go
-         -Dsonar.test.exclusions=**/vendor/**
-         -Dsonar.go.coverage.reportPaths=/github/workspace/bin/cov.out
+ 
 
 
 
