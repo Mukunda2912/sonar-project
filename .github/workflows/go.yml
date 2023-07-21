@@ -36,6 +36,8 @@ jobs:
         args: >
          -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=Mukunda2912_sonar-project
+         -Dsonar.coverage.goReportPaths=coverage.lcov
+
 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
