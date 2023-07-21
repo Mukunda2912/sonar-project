@@ -1,6 +1,0 @@
-sonar.projectKey=Mukunda2912_sonar-project
-sonar.organization=mukunda2912
-sonar.sources=./
-sonar.tests=./
-sonar.test.inclusions=**/*_test.go
-sonar.go.coverage.reportPaths=coverage.out
