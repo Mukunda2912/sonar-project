@@ -46,6 +46,7 @@ jobs:
          -Dsonar.projectKey=Mukunda2912_sonar-project
          -Dsonar.go.coverage.reportPaths=src/cov.out
          -Dsonar.exclusions=**/*_test.go
+         -Dsonar.sources=src
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
