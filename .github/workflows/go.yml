@@ -40,12 +40,12 @@ jobs:
       
     - name: Analyze with SonarCloud
       uses: sonarsource/sonarqube-scan-action@master
-#       with:
-#         args: >
-#          -Dsonar.organization=mukunda2912
-#          -Dsonar.projectKey=first-app
-#          -Dsonar.go.coverage.reportPaths=cov.out
-#          -Dsonar.exclusions=**/*_test.go
+      with:
+        args: >
+         -Dsonar.organization=mukunda2912
+         -Dsonar.projectKey=first-app
+         -Dsonar.go.coverage.reportPaths=cov.out
+         -Dsonar.exclusions=**/*_test.go
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_LOCAL }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
