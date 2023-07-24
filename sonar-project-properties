@@ -1,4 +1,4 @@
-sonar.projectKey=Mukunda2912_sonar-project
+sonar.projectKey=first-app
 sonar.organization=mukunda2912
 sonar.sources=.
 sonar.exclusions=**/*_test.go,**/vendor/**,**/testdata/*
