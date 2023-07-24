@@ -39,7 +39,7 @@ jobs:
  
       
     - name: Analyze with SonarCloud
-    - uses: sonarsource/sonarqube-scan-action@master
+      uses: sonarsource/sonarqube-scan-action@master
 #       with:
 #         args: >
 #          -Dsonar.organization=mukunda2912
