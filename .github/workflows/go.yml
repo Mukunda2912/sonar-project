@@ -42,7 +42,6 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@master
       with:
         args: >
-         -Dsonar.organization=mukunda2912
          -Dsonar.projectKey=first-app
          -Dsonar.go.coverage.reportPaths=cov.out
          -Dsonar.exclusions=**/*_test.go
